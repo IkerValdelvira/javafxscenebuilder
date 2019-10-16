@@ -34,12 +34,16 @@ dependencies {
 
     // Use JUnit test framework
     testImplementation 'junit:junit:4.12'
+
+    compile 'com.flickr4java:flickr4java:3.0.2'
+
+    compile "org.slf4j:slf4j-simple:1.6.1"
 }
 
 
 
 // Define the main class for the application
-mainClassName = "$moduleName/ehu.isad.Main"
+mainClassName = "$moduleName/ehu.isad.AuthExample"
 
 
 def newArgs = [ '--add-exports','java.desktop/com.apple.eawt=ALL-UNNAMED',]
@@ -54,4 +58,8 @@ run {
         ])
         classpath = files()
     }
+}
+
+run {
+    standardInput = System.in
 }
